@@ -1,0 +1,12 @@
+@import "tailwindcss";
+.active{
+    color: rgb(48, 241, 48);
+    border-bottom: solid 1px rgb(48, 241, 48);
+}
+body{
+    background-color: black;
+    color: white;
+}
+
+
+  
