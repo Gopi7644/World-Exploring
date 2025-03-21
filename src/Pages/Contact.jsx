@@ -53,7 +53,7 @@ const Contact = () => {
               type="password"
               placeholder='Enter Your password'
               name='pass'
-              // required
+              required
               autoComplete='off'
               className='w-[400px] border p-2 rounded-md'
             />
