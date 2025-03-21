@@ -12,7 +12,7 @@ const Contact = () => {
     setInputData(data);
     // localStorage.setItem('formData', JSON.stringify(data));
 
-    const res = await axios.post('http://localhost:8000/api/create', data);
+    const res = await axios.post('https://server-lfgg.onrender.com/api/create', data);
 
     console.log(res);
 
