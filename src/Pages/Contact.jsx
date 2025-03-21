@@ -8,15 +8,14 @@ const Contact = () => {
   const handleFormSubmit = async (formData) => {
     // console.log(formData.entries());
     const data = Object.fromEntries(formData.entries());
-    console.log(data);
+    // console.log(data);
     setInputData(data);
     // localStorage.setItem('formData', JSON.stringify(data));
 
     const res = await axios.post('https://server-lfgg.onrender.com/api/create', data);
 
-    console.log(res);
-
     alert("Your Message has been send successfully");
+    console.log(res);
   }
 
   return (
@@ -54,7 +53,7 @@ const Contact = () => {
               type="password"
               placeholder='Enter Your password'
               name='pass'
-              required
+              // required
               autoComplete='off'
               className='w-[400px] border p-2 rounded-md'
             />
