@@ -1,14 +1,20 @@
+import axios from 'axios';
 import React, { useState } from 'react'
+
 
 const Contact = () => {
   const [inputData, setInputData] = useState({});
 
-  const handleFormSubmit = (formData) => {
+  const handleFormSubmit = async (formData) => {
     // console.log(formData.entries());
     const data = Object.fromEntries(formData.entries());
     console.log(data);
     setInputData(data);
-    localStorage.setItem('formData', JSON.stringify(data));
+    // localStorage.setItem('formData', JSON.stringify(data));
+
+    const res = await axios.post('http://localhost:8000/api/create', data);
+
+    console.log(res);
 
     alert("Your Message has been send successfully");
   }
@@ -21,36 +27,44 @@ const Contact = () => {
           <form action={handleFormSubmit}
             className='flex flex-col justify-center items-center gap-6'>
             <input
-                type="text"
-                placeholder='Enter Your Name'
-                name='username'
-                required
-                autoComplete='off'
-                className='w-[400px] border p-2 rounded-md'
-              />
-            {/* <input
-              type="password"
-              placeholder='Enter Your password'
-              name='password'
-              required
-              autoComplete='off'
-              className='w-[400px] border p-2 rounded-md'
-            /> */}
-            <input
-              type="email"
-              placeholder='Enter Your Email'
-              name='mail'
+              type="text"
+              placeholder='Enter Your First Name'
+              name='fname'
               required
               autoComplete='off'
               className='w-[400px] border p-2 rounded-md'
             />
-            <textarea
+            <input
+              type="text"
+              placeholder='Enter Your Last Name'
+              name='lname'
+              required
+              autoComplete='off'
+              className='w-[400px] border p-2 rounded-md'
+            />
+            <input
+              type="email"
+              placeholder='Enter Your Email'
+              name='email'
+              required
+              autoComplete='off'
+              className='w-[400px] border p-2 rounded-md'
+            />
+            <input
+              type="password"
+              placeholder='Enter Your password'
+              name='pass'
+              required
+              autoComplete='off'
+              className='w-[400px] border p-2 rounded-md'
+            />
+            {/* <textarea
               name="message"
               cols="30"
               rows="5"
               required
               className='w-[400px] border p-2 rounded-md'
-              placeholder='Enter Your Message'></textarea>
+              placeholder='Enter Your Message'></textarea> */}
             <div className='flex w-[400px] justify-start'>
               <button
                 type='submit'
