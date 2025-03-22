@@ -44,7 +44,7 @@ const About = () => {
   return (
     <>
       <h1 className='mt-20 text-center font-bold text-2xl'>Here are the User Messages</h1>
-      <div className='max-w-[1170px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-10'>
+      <div className='max-w-[1170px] mx-auto sm:px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-10'>
         {data.map((CurData, i) => {
           const { country_name, capital, population, interesting_fact, fname, lname, email, message, _id } = CurData;
 
