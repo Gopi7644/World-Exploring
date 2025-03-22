@@ -5,11 +5,13 @@ const About = () => {
   const [data, setData] = useState([]);
   const [editId, setEditId] = useState(null); // Track the ID of the user being edited
   const [editData, setEditData] = useState({}); // Store the editable data
+  const [loding, setLoding] = useState(true);
 
   const apiData = async () => {
     const res = await axios.get('https://server-lfgg.onrender.com/api/getAll');
     console.log(res.data);
     setData(res.data);
+    setLoding(false);
   };
 
   useEffect(() => {
@@ -41,12 +43,16 @@ const About = () => {
     apiData(); // Refresh the data
   };
 
+
+  if(loding){
+    return <div className='text-center mt-20 text-2xl font-bold'><h1>Loading...</h1></div> 
+  }
   return (
     <>
       <h1 className='mt-20 text-center font-bold text-2xl'>Here are the User Messages</h1>
       <div className='max-w-[1170px] mx-auto sm:px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-10'>
         {data.map((CurData, i) => {
-          const { country_name, capital, population, interesting_fact, fname, lname, email, message, _id } = CurData;
+          const { fname, lname, email, message, _id } = CurData;
 
           return (
             <div className='bg-[#7a7676bb] p-4 rounded-md text-white' key={i}>
@@ -96,18 +102,14 @@ const About = () => {
               ) : (
                 // View Mode
                 <>
-                  <h2 className='font-bold text-xl'>{country_name}</h2>
                   <p>
                     <span className='text-[#373434] font-bold'>User Id: </span>
                     {_id}
                   </p>
                   <p>
-                    <span className='text-[#373434] font-bold'>First Name: </span>
-                    {fname}
-                  </p>
-                  <p>
-                    <span className='text-[#373434] font-bold'>Last Name: </span>
-                    {lname}
+                    <span className='text-[#373434] font-bold'>Name: </span>
+                    {/* {fname} */}
+                    {`${fname} ${lname}`}
                   </p>
                   <p>
                     <span className='text-[#373434] font-bold'>Email: </span>
