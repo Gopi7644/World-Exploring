@@ -25,9 +25,9 @@ const Filter = ({ search, setSearch, fillter, setFillter, country, setCountry })
 
   return (
     <>
-      <section className='mt-20 max-w-[1170px] mx-auto flex justify-around'>
+      <section className='mt-20 max-w-[1170px] mx-auto flex justify-center items-center gap-5'>
         <input
-          className='border p-2 rounded-md'
+          className='border p-2 rounded-md w-[100px]'
           type="text"
           placeholder='Search'
           value={search}

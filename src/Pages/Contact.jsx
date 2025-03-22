@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import About from './About';
 
 const Contact = () => {
   const [inputData, setInputData] = useState({});
@@ -46,31 +47,31 @@ const Contact = () => {
               placeholder='Enter Your First Name'
               name='fname'
               autoComplete='off'
-              className='w-[400px] border p-2 rounded-md'
+              className='w-[350px] md:w-[400px] border p-2 rounded-md'
             />
             <input
               type="text"
               placeholder='Enter Your Last Name'
               name='lname'
               autoComplete='off'
-              className='w-[400px] border p-2 rounded-md'
+              className='w-[350px] md:w-[400px] border p-2 rounded-md'
             />
             <input
               type="email"
               placeholder='Enter Your Email'
               name='email'
               autoComplete='off'
-              className='w-[400px] border p-2 rounded-md'
+              className='w-[350px] md:w-[400px] border p-2 rounded-md'
             />
             <textarea
               name="message"
               cols="30"
               rows="5"
-              className='w-[400px] border p-2 rounded-md'
+              className='w-[350px] md:w-[400px] border p-2 rounded-md'
               placeholder='Enter Your Message'
             ></textarea>
             {error && <p className='text-red-500'>{error}</p>} {/* Display error message */}
-            <div className='flex w-[400px] justify-start'>
+            <div className='flex w-[350px] md:w-[400px] justify-start'>
               <button
                 type='submit'
                 className='w-full bg-[#292828bb] text-white p-2 rounded-full text-left border'
@@ -80,6 +81,7 @@ const Contact = () => {
             </div>
           </form>
         </div>
+        <About />
       </section>
     </>
   );

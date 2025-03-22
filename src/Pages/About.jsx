@@ -55,7 +55,7 @@ const About = () => {
           const { fname, lname, email, message, _id } = CurData;
 
           return (
-            <div className='bg-[#7a7676bb] p-4 rounded-md text-white' key={i}>
+            <div className='bg-[#7a7676bb] p-4 mx-4 sm:mx-0 rounded-md text-white' key={i}>
               {editId === _id ? (
                 // Edit Mode
                 <>

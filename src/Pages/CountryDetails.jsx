@@ -23,12 +23,12 @@ const CountryDetails = () => {
   return (
     <>
       <section>
-        <div className='max-w-[1170px] mx-auto mt-50 border-t border-b border-blue-400 relative'>
-          <div className='grid grid-cols-2 gap-2'>
-            <div className='flex justify-center items-center'>
+        <div className='max-w-[1170px] mx-auto  mt-50 border-t border-b border-blue-400 relative'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+            <div className='flex justify-center items-center mt-8 md:mt-0'>
               <img src={countryD.flags.svg} className='w-[200px]' alt="flag" />
             </div>
-            <div className='mb-10 mt-2'>
+            <div className='mb-10 mt-2 ml-10 md:ml-0'>
               <h1 className='text-2xl font-bold'>{countryD.name.official}</h1>
               <p><span className='font-bold text-gray-600'>Native Name : </span>
               {

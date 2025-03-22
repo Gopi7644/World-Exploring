@@ -13,7 +13,7 @@ const Hero = () => {
     <>
       <section className='max-w-[1170px] mx-auto my-10 px-4 grid grid-cols-1 md:grid-cols-2 gap-8 text-white'>
         {/* Left Content */}
-        <div className='flex flex-col justify-center relative'>
+        <div className='flex flex-col justify-center'>
           <h1 className='my-4 font-bold text-3xl md:text-4xl lg:text-5xl'>
             Explore the World, One <br /> Country at a Time.
           </h1>
@@ -22,7 +22,7 @@ const Hero = () => {
             features of each country. From the ancient Mayans to the modern-day Indians, there's a place for everyone.
           </p>
           <button
-            className='absolute bottom-0 md:static bg-[#605a5abb] p-3 md:p-4 flex items-center gap-2 rounded-md text-center'
+            className='md:static bg-[#605a5abb] p-3 md:p-4 flex items-center gap-2 rounded-md text-center'
             onClick={handleClick}
           >
             Start Exploring
