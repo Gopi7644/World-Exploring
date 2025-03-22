@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import CountryData from '../Components/CountryData.json'
+// import CountryData from '../Components/CountryData.json'
 import axios from 'axios'
 
 const About = () => {
@@ -20,10 +20,11 @@ const About = () => {
     <h1 className='mt-20 text-center font-bold text-2xl'>Here are the User Message </h1>
     <div className='max-w-[1170px] mx-auto grid grid-cols-3 gap-4 my-10'>
       {data.map((CurData,i) => {
-        const {country_name,capital,population,interesting_fact, fname, lname,email, message} = CurData
+        const {country_name,capital,population,interesting_fact, fname, lname,email, message, _id} = CurData
         return (
           <div className='bg-[#7a7676bb] p-4 rounded-md text-white' key={i}>
             <h2 className='font-bold text-xl'>{country_name}</h2>
+            <p><span className='text-[#373434] font-bold'>User Id : </span>{_id}</p>
             <p><span className='text-[#373434] font-bold'>First Name : </span>{fname}</p>
             <p><span className='text-[#373434] font-bold'>Last Name :</span> {lname}</p>
             <p><span className='text-[#373434] font-bold'>Email :</span>{email}</p>

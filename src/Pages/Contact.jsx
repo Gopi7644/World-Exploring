@@ -12,16 +12,14 @@ const Contact = () => {
     setInputData(data);
     // localStorage.setItem('formData', JSON.stringify(data));
 
-    // const { fname, lname, email, message } = inputData
-    // if ( !fname, !lname, !email, !message ) {
-    //   alert("Please fill out all required fields");
-    //   return;
-    // }
-
-
+    const { fname, lname, email, message } = inputData
+    if (!fname, !lname, !email, !message) {
+      alert("Please fill out all required fields");
+      return;
+    }
 
     const res = await axios.post('https://server-lfgg.onrender.com/api/create', data);
-
+    
     alert("Your Message has been send successfully");
     console.log(res);
   }
@@ -45,7 +43,7 @@ const Contact = () => {
               type="text"
               placeholder='Enter Your Last Name'
               name='lname'
-              // required
+              required
               autoComplete='off'
               className='w-[400px] border p-2 rounded-md'
             />
