@@ -8,9 +8,17 @@ const Contact = () => {
   const handleFormSubmit = async (formData) => {
     // console.log(formData.entries());
     const data = Object.fromEntries(formData.entries());
-    // console.log(data);
+    console.log(data);
     setInputData(data);
     // localStorage.setItem('formData', JSON.stringify(data));
+
+    // const { fname, lname, email, message } = inputData
+    // if ( !fname, !lname, !email, !message ) {
+    //   alert("Please fill out all required fields");
+    //   return;
+    // }
+
+
 
     const res = await axios.post('https://server-lfgg.onrender.com/api/create', data);
 
@@ -29,7 +37,7 @@ const Contact = () => {
               type="text"
               placeholder='Enter Your First Name'
               name='fname'
-              required
+              // required
               autoComplete='off'
               className='w-[400px] border p-2 rounded-md'
             />
@@ -37,7 +45,7 @@ const Contact = () => {
               type="text"
               placeholder='Enter Your Last Name'
               name='lname'
-              required
+              // required
               autoComplete='off'
               className='w-[400px] border p-2 rounded-md'
             />
@@ -49,21 +57,22 @@ const Contact = () => {
               autoComplete='off'
               className='w-[400px] border p-2 rounded-md'
             />
-            <input
+            {/* <input
               type="password"
               placeholder='Enter Your password'
               name='pass'
-              required
+              // required
               autoComplete='off'
               className='w-[400px] border p-2 rounded-md'
-            />
-            {/* <textarea
+            /> */}
+            <textarea
               name="message"
               cols="30"
               rows="5"
               required
               className='w-[400px] border p-2 rounded-md'
-              placeholder='Enter Your Message'></textarea> */}
+              placeholder='Enter Your Message'>
+            </textarea>
             <div className='flex w-[400px] justify-start'>
               <button
                 type='submit'
