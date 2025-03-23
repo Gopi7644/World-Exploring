@@ -64,6 +64,11 @@ const Contact = () => {
               autoComplete='off'
               className='w-[350px] md:w-[400px] border p-2 rounded-md'
             />
+            {/* <input
+              type="file"
+              name='profilePic'
+              className='w-[350px] md:w-[400px] border p-2 rounded-md'
+            /> */}
             <textarea
               name="message"
               cols="30"
