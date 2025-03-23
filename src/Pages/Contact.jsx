@@ -20,7 +20,8 @@ const Contact = () => {
       setError("Please fill out all required fields.");
       return;
     }
-
+    // http://localhost:8000/api/create
+    // https://server-lfgg.onrender.com/api/create
     try {
       const res = await axios.post('https://server-lfgg.onrender.com/api/create', data);
       alert("Your message has been sent successfully!");
